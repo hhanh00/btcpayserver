@@ -585,6 +585,7 @@ namespace BTCPayServer.Controllers
                             Enabled = isEnabled
                         });
                         break;
+
                 }
             }
         }
@@ -603,7 +604,8 @@ namespace BTCPayServer.Controllers
                 NetworkFeeMode = storeBlob.NetworkFeeMode,
                 AnyoneCanCreateInvoice = storeBlob.AnyoneCanInvoice,
                 PaymentTolerance = storeBlob.PaymentTolerance,
-                InvoiceExpiration = (int)storeBlob.InvoiceExpiration.TotalMinutes,
+	            if ((int)storeBlob.InvoiceExpiration.TotalMinutes > 0)
+    	            InvoiceExpiration = (int)storeBlob.InvoiceExpiration.TotalMinutes,
                 DefaultCurrency = storeBlob.DefaultCurrency
             };
 
