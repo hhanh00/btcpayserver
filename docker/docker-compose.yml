@@ -5,7 +5,7 @@ version: "3"
 # The Visual Studio launch setting `Docker-regtest` is configured to use this environment.
 services:
   btcp:
-    image: hhanh00/btcp
+    image: btcp-ycash
     environment:
       BTCPAY_LAUNCHSETTINGS: "false"
       BTCPAY_BIND: "0.0.0.0"
@@ -15,12 +15,12 @@ services:
       BTCPAY_ALLOW-ADMIN-REGISTRATION: "true"
       BTCPAY_DISABLE-REGISTRATION: "false"
       ASPNETCORE_ENVIRONMENT: "production"
-      BTCPAY_CHAINS: "zec"
+      BTCPAY_CHAINS: "yec"
       BTCPAY_POSTGRES: "User ID=postgres;Host=postgres;Port=5432;Database=btcpayserver"
       BTCPAY_DOCKERDEPLOYMENT: "true"
-      BTCPAY_ZEC_DAEMON_URI: "http://wallet:8000"
-      BTCPAY_ZEC_WALLET_DAEMON_URI: "http://wallet:8000"
-      BTCPAY_ZEC_WALLET_DAEMON_WALLETDIR: "/"
+      BTCPAY_YEC_DAEMON_URI: "http://wallet:8000"
+      BTCPAY_YEC_WALLET_DAEMON_URI: "http://wallet:8000"
+      BTCPAY_YEC_WALLET_DAEMON_WALLETDIR: "/"
     links:
       - postgres
     ports:
@@ -30,7 +30,7 @@ services:
     volumes:
     - "btcpay_datadir:/datadir"
   wallet:
-    image: hhanh00/zcash-walletd
+    image: hhanh00/ycash-walletd
     environment:
       VK: zxviews1qwy5cttzqqqqpq8ksfmzqgz90r73yevcw6mvwuv5zuddak9zgl9epp6x308pczzezjkqnuu6780xu5g3wfjn8lghwpkh08rvtcg0pyk0ap7c0p63duvpu70uydrhtlw7jam4x6u4qtxaetfu4hkh6vxwrxue2xqgznkfntrqe0sv464uewwlglr0dzakssj8tdx27vq3dnerfa5z5fgf8vjutlcey3lwn4m6ncg8y4n2cgl64rd768uqg0yfvshljqt3g4x83kngv4g2fzx0z
       BIRTH_HEIGHT: 1514933
