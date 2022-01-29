@@ -33,14 +33,14 @@ namespace BTCPayServer.Services.Altcoins.Zcash.UI
     [Authorize(AuthenticationSchemes = AuthenticationSchemes.Cookie)]
     [Authorize(Policy = Policies.CanModifyStoreSettings, AuthenticationSchemes = AuthenticationSchemes.Cookie)]
     [Authorize(Policy = Policies.CanModifyServerSettings, AuthenticationSchemes = AuthenticationSchemes.Cookie)]
-    public class ZcashLikeStoreController : Controller
+    public class UIZcashLikeStoreController : Controller
     {
         private readonly ZcashLikeConfiguration _ZcashLikeConfiguration;
         private readonly StoreRepository _StoreRepository;
         private readonly ZcashRPCProvider _ZcashRpcProvider;
         private readonly BTCPayNetworkProvider _BtcPayNetworkProvider;
 
-        public ZcashLikeStoreController(ZcashLikeConfiguration ZcashLikeConfiguration,
+        public UIZcashLikeStoreController(ZcashLikeConfiguration ZcashLikeConfiguration,
             StoreRepository storeRepository, ZcashRPCProvider ZcashRpcProvider,
             BTCPayNetworkProvider btcPayNetworkProvider)
         {

@@ -1,11 +1,11 @@
 @using BTCPayServer.Views.Stores
 @using BTCPayServer.Abstractions.Extensions
-@model BTCPayServer.Services.Altcoins.Zcash.UI.ZcashLikeStoreController.ZcashLikePaymentMethodViewModel
+@model BTCPayServer.Services.Altcoins.Zcash.UI.UIZcashLikeStoreController.ZcashLikePaymentMethodViewModel
 
 @{
     Layout = "../Shared/_NavLayout.cshtml";
-    ViewData["NavPartialName"] = "../Stores/_Nav";
-    ViewData.SetActivePageAndTitle(StoreNavPages.ActivePage, $"{Model.CryptoCode} Settings");
+    ViewData["NavPartialName"] = "../UIStores/_Nav";
+    ViewData.SetActivePage(StoreNavPages.OnchainSettings, $"{Model.CryptoCode} Settings");
 }
 
 <div class="row">
@@ -98,7 +98,7 @@
                 <a class="btn btn-secondary" asp-action="GetStoreZcashLikePaymentMethods"
                    asp-route-storeId="@Context.GetRouteValue("storeId")"
                    asp-route-cryptoCode="@Context.GetRouteValue("cryptoCode")"
-                   asp-controller="ZcashLikeStore">
+                   asp-controller="UIZcashLikeStore">
                     Back to list
                 </a>
             </div>

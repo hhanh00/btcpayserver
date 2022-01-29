@@ -14,11 +14,16 @@ namespace BTCPayServer.Services.Altcoins.Zcash.Services
         private readonly ZcashRPCProvider _ZcashRpcProvider;
         private readonly ZcashLikeConfiguration _ZcashLikeConfiguration;
         private CancellationTokenSource _Cts;
-        public ZcashLikeSummaryUpdaterHostedService(ZcashRPCProvider ZcashRpcProvider, ZcashLikeConfiguration ZcashLikeConfiguration)
+
+        public Logs Logs { get; }
+
+        public ZcashLikeSummaryUpdaterHostedService(ZcashRPCProvider ZcashRpcProvider, ZcashLikeConfiguration ZcashLikeConfiguration, Logs logs)
         {
             _ZcashRpcProvider = ZcashRpcProvider;
             _ZcashLikeConfiguration = ZcashLikeConfiguration;
+            Logs = logs;
         }
+
         public Task StartAsync(CancellationToken cancellationToken)
         {
             _Cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);

@@ -1,11 +1,11 @@
 @using BTCPayServer.Views.Stores
 @using BTCPayServer.Abstractions.Extensions
-@model BTCPayServer.Services.Altcoins.Zcash.UI.ZcashLikeStoreController.ZcashLikePaymentMethodListViewModel
+@model BTCPayServer.Services.Altcoins.Zcash.UI.UIZcashLikeStoreController.ZcashLikePaymentMethodListViewModel
 
 @{
     Layout = "../Shared/_NavLayout.cshtml";
-    ViewData.SetActivePageAndTitle(StoreNavPages.ActivePage, "Zcash Settings");
-    ViewData["NavPartialName"] = "../Stores/_Nav";
+    ViewData.SetActivePage(StoreNavPages.OnchainSettings, "Zcash Settings");
+    ViewData["NavPartialName"] = "../UIStores/_Nav";
 }
 
 <div class="row">

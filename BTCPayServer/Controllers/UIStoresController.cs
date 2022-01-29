@@ -604,8 +604,7 @@ namespace BTCPayServer.Controllers
                 NetworkFeeMode = storeBlob.NetworkFeeMode,
                 AnyoneCanCreateInvoice = storeBlob.AnyoneCanInvoice,
                 PaymentTolerance = storeBlob.PaymentTolerance,
-	            if ((int)storeBlob.InvoiceExpiration.TotalMinutes > 0)
-    	            InvoiceExpiration = (int)storeBlob.InvoiceExpiration.TotalMinutes,
+                InvoiceExpiration = (int)storeBlob.InvoiceExpiration.TotalMinutes,
                 DefaultCurrency = storeBlob.DefaultCurrency
             };
 
